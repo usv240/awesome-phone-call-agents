@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>still-covered</title>
+<style>
+  :root {
+    --bg: #0e1317; --panel: #161d23; --panel-2: #1c252c; --line: #2a353f; --line-2: #35424e;
+    --text: #e9eff3; --muted: #93a4b1; --muted-2: #b6c4ce;
+    --green: #37d67a; --blue: #4aa3e8; --yellow: #f5c518; --focus: #6cc0ff;
+    font-family: -apple-system, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.55; }
+  .wrap { max-width: 720px; margin: 0 auto; padding-block: 56px 72px; padding-left: 20px; padding-right: 20px; }
+  h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: -0.01em; text-wrap: balance; }
+  .sub { color: var(--muted-2); margin: 0 0 8px; font-size: 16px; }
+  .lede { color: var(--muted); margin: 0 0 34px; }
+  .eyebrow { font-size: 11px; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
+  .cards { display: grid; gap: 14px; margin: 0 0 34px; }
+  a.card {
+    display: block; text-decoration: none; color: inherit;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 18px 20px; transition: border-color .15s ease, background .15s ease;
+  }
+  a.card:hover { border-color: var(--line-2); background: var(--panel-2); }
+  a.card:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  a.card b { display: block; font-size: 17px; margin-bottom: 5px; }
+  a.card b .arrow { color: var(--blue); font-weight: 400; }
+  a.card p { margin: 0; color: var(--muted); font-size: 13.5px; }
+  .note { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 18px; }
+  .note code { background: var(--panel-2); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; }
+  .note a { color: var(--blue); }
+  @media (prefers-reduced-motion: reduce) { a.card { transition: none; } }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="eyebrow">CALL-E &middot; awesome-phone-call-agents</p>
+    <h1>still-covered</h1>
+    <p class="sub">A phone screener that finds the people who are exempt from the new Medicaid work
+      requirement and do not know it.</p>
+    <p class="lede">Two pages from the project, self-contained: once loaded, neither one makes a
+      single network request.</p>
+
+    <div class="cards">
+      <a class="card" href="snapshot.html">
+        <b>The dashboard, from a real campaign <span class="arrow">&rarr;</span></b>
+        <p>The actual <code>/api/state</code> output of a completed dry-run, baked into the real
+          dashboard with the network turned off. Every number, person and worklist item is that
+          run&rsquo;s output, not a mock-up.</p>
+      </a>
+      <a class="card" href="lint.html">
+        <b>The call-task linter <span class="arrow">&rarr;</span></b>
+        <p>Paste any CALL-E call task. Fourteen rules, each one learned from a defect on a real
+          call, report which boundaries the task leaves undefended and the line that fixes each.</p>
+      </a>
+    </div>
+
+    <p class="note">
+      Source, tests and the full write-up:
+      <a href="https://github.com/usv240/awesome-phone-call-agents/tree/feat/still-covered-medicaid-screener/apps/typescript/still-covered">apps/typescript/still-covered</a>.
+      Nothing here places a phone call &mdash; a live campaign needs three separate signals and a human at a terminal.
+    </p>
+  </div>
+</body>
+</html>
